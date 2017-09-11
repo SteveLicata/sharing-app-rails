@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   #welcome route
   root "welcome#home", as: "home_page"
 
+  #user route
+  get "/users/:id" => "users#show", as: "user"
+
   #user routes
   resources :users
 

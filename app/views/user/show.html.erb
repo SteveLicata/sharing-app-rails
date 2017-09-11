@@ -1,2 +1,9 @@
 <%= @user.inspect %>
+<%= @user.user_name %>
+<%= @user.first_name %>
+<%= @user.last_name %>
+<%= @user.email %>
+
 <%= image_tag @user.avatar.url %>
+
+<%= link_to "Edit Profile", edit_user_registration_path %>
