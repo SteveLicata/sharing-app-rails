@@ -12,8 +12,10 @@
 
     <nav>
       <% if (user_signed_in?) %>
+        <%= link_to "Profile", user_path(current_user.id) %>
         <%= link_to 'Sign Out', { :action => 'destroy', :controller => 'devise/sessions' },	method: :delete %>
     	<% else %>
+        <%= link_to "Home", home_page_path %>
         <%= link_to 'Sign In', new_user_session_path %>
     		<%= link_to 'Sign Up', new_user_registration_path %>
       <% end %>
