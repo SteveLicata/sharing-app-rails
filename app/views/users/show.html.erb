@@ -1,0 +1,13 @@
+<!-- <%= @user.inspect %> -->
+<h1>User Name:</h1>
+<%= @user.user_name %>
+<h1>First Name:</h1>
+<%= @user.first_name %>
+<h1>Last Name:</h1>
+<%= @user.last_name %>
+<h1>Email:</h1>
+<%= @user.email %>
+<h1>Avatar:</h1>
+<%= image_tag @user.avatar.url %>
+
+<h1><%= link_to "Edit Profile", edit_user_registration_path %></h1>
