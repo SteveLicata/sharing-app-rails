@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   #user routes
   resources :users
 
+  #post routes
+  resources :posts
+
 end
