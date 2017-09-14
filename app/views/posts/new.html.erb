@@ -1,7 +1,7 @@
-<h1>Edit Your Post</h1>
+<h1>Create New Post</h1>
 
 <h2>
-  <%= form_for @post do |f| %>
+  <%= form_for Post.new do |f| %>
 
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -13,11 +13,12 @@
 
     <br>
 
-    <%= f.label :user %>
+    <%= f.label :user %><br>
     <%= f.collection_select :user_id, User.all, :id, :first_name %>
 
     <br>
 
     <%= f.submit %>
+
   <% end %>
 </h2>

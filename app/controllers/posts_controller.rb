@@ -15,6 +15,27 @@ class PostsController < ApplicationController
     @new_post.save
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @post_user = @post.user.first_name
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update({
+      title: params[:post][:title],
+      content: params[:post][:content],
+      user_id: params[:post][:user_id],
+      created_at: params[:post][:created_at]
+      })
+
+    if (@post)
+      redirect_to url_for(:controller => :posts, :action => :index)
+    else
+      redirect_to url_for(:controller => :posts, :action => :edit)
+    end
+  end
+
   def destroy
     Post.delete(params[:id])
       redirect_to url_for(:controller => :posts, :action => :index)

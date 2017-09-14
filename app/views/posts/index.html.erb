@@ -1,0 +1,26 @@
+<h1>All Posts</h1>
+
+<h2>
+  <%= link_to ("Create A New Post To Share"), new_post_path %>
+</h2>
+
+<br>
+
+<h2>
+  <%= @posts.each do |post| %>
+
+    <p>Post Title:</p>
+    <%= post.id %>
+    <%= post.title %>
+
+    <p>Post:</p>
+    <%= post.content %>
+
+    <br>
+
+    <%= link_to ("User's Profile"), post_path(post.id) %> |
+    <br>
+    <%= link_to 'Delete Post', { action: :destroy, id: post.id }, method: :delete %>
+
+  <% end %>
+</h2>
