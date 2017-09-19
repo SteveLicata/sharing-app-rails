@@ -1,6 +1,8 @@
 <h1>All Users</h1>
 <% @users.each do |users| %>
 <%= users.user_name %>
+<%= link_to ("Profile"), user_path(users.id) %>
+<br>
 <% end %>
 
 
@@ -16,7 +18,9 @@
 <h1>Avatar:</h1>
 <%= image_tag @user.avatar.url %>
 
-<h1><%= link_to "Edit Profile", edit_user_registration_path %></h1>
+<h1>
+  <%= link_to "Edit Profile", edit_user_registration_path %>
+</h1>
 
 
 <h2>

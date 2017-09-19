@@ -1,24 +1,32 @@
-# README
+# 'Sharing App' 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This in-progress Ruby On Rails app will be for sharing content between family and friends.
 
-Things you may want to cover:
+Things such as:
 
-* Ruby version
+* a link to a notable new article
 
-* System dependencies
+* a favorite movie you'd like to see
 
-* Configuration
+* a recipe someone asked you for
 
-* Database creation
+* a music venue you had a great time at
 
-* Database initialization
 
-* How to run the test suite
+# Technologies (so far...)
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ruby on Rails
 
-* Deployment instructions
+* ActiveRecord
 
-* ...
+* SQLite3
+
+# Gems
+
+* Devise
+
+* Paperclip
+
+* Pry-Rails
+
+* Awesome_Print

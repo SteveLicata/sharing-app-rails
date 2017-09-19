@@ -11,7 +11,11 @@
 
     <br>
 
-    <%= link_to ("User's Profile page"), user_path(user.id) %> |
+    <%= image_tag user.avatar.url %>
+
+    <br>
+
+    <%= link_to ("User's Profile page"), user_path(user.id) %>
 
     <%= link_to 'Delete user',  { action: :destroy, id: user.id }, method: :delete %>
     <hr>

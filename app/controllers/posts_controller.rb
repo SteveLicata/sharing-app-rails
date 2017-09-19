@@ -13,6 +13,12 @@ class PostsController < ApplicationController
       created_at: params(:created_at)
     )
     @new_post.save
+
+    if @new_post
+      redirect_to url_for(:controller => :posts, :action => :index)
+    else
+      redirect_to url_for(:controller => :posts, :action => :new)
+    end
   end
 
   def show

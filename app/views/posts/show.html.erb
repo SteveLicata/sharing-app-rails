@@ -3,14 +3,27 @@
 </h1>
 
 <h2>
-  <%= @post.id %>.
-  <%= @post.title %>
+  <%= link_to ("Create A New Post To Share"), new_post_path %>
+</h2>
 
-  <br>
+<h2>
+  <% @posts.each do |post| %>
 
-  <%= @post.content %>
+    <%= post.id %>.
+    <%= post.title %>
 
-  <br>
+    <br>
 
-  Posted By: <%= @post.user.fname %> <%= @post.user.lname %>
+    <%= post.content %>
+
+    <br>
+
+    Posted at <%= post.created_at %>
+
+    <br>
+
+    Posted By: <%= @post.user.fname %> <%= @post.user.lname %>
+
+  <% end %>
+
 </h2>
