@@ -1,29 +1,33 @@
-<h1>
-  <%= @post.user.first_name %> <%= @post.user.last_name %>'s Post
-</h1>
-
 <h2>
   <%= link_to ("Create A New Post To Share"), new_post_path %>
 </h2>
 
-<h2>
-  <% @posts.each do |post| %>
+<h1>
+  <%= @post.user.user_name %>'s Post
+</h1>
 
-    <%= post.id %>.
-    <%= post.title %>
 
-    <br>
-
-    <%= post.content %>
-
-    <br>
-
-    Posted at <%= post.created_at %>
+<p>
+    <% @post.id %>
+    <%= @post.title %>
 
     <br>
 
-    Posted By: <%= @post.user.fname %> <%= @post.user.lname %>
+    <%= @post.content %>
 
-  <% end %>
+    <br>
 
-</h2>
+    Posted at <%= @post.created_at %>
+
+    <br>
+
+    Posted By: <%= @post.user.first_name %> <%= @post.user.last_name %>
+
+    <br>
+    
+    <%= link_to 'Delete Post', { action: :destroy, id: @post.id },
+    method: :delete %>
+
+    <%= link_to 'Edit Post', edit_post_path(user_id: @post.id) %>
+
+</p>

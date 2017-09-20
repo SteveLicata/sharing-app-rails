@@ -7,10 +7,10 @@ class PostsController < ApplicationController
 
   def create
     @new_post = Post.new(
-      user_id: params[:user_id].to_i,
-      title: params[:title],
-      content: params(:content),
-      created_at: params(:created_at)
+      user_id: params[:post][:user_id].to_i,
+      title: params[:post][:title],
+      content: params[:post][:content],
+      created_at: params[:post][:created_at]
     )
     @new_post.save
 
@@ -24,6 +24,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_user = @post.user.first_name
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   def update

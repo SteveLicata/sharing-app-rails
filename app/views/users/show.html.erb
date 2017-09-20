@@ -1,22 +1,32 @@
 <h1>All Users</h1>
+
 <% @users.each do |users| %>
-<%= users.user_name %>
-<%= link_to ("Profile"), user_path(users.id) %>
-<br>
+  <%= users.user_name %>
+  <%= link_to ("Profile"), user_path(users.id) %>
+  <br>
 <% end %>
 
+<br>
+<hr>
 
-<!-- <%= @user.inspect %> -->
-<h1>User Name:</h1>
-<%= @user.user_name %>
-<h1>First Name:</h1>
-<%= @user.first_name %>
-<h1>Last Name:</h1>
-<%= @user.last_name %>
-<h1>Email:</h1>
-<%= @user.email %>
-<h1>Avatar:</h1>
-<%= image_tag @user.avatar.url %>
+<div>
+  <!-- <%= @user.inspect %> -->
+  <p>
+    User Name:<%= @user.user_name %>
+  </p>
+  <p>
+    First Name:<%= @user.first_name %>
+  </p>
+  <p>
+    Last Name:<%= @user.last_name %>
+  </p>
+  <p>
+    Email:<%= @user.email %>
+  </p>
+  <div>
+    <%= image_tag @user.avatar.url %>
+  </div>
+</div>
 
 <h1>
   <%= link_to "Edit Profile", edit_user_registration_path %>
@@ -28,15 +38,11 @@
 </h2>
 
 <h2>
-  <%= @user_posts.each do |post| %>
-    <%= post.id %>
+  <% @user_posts.each do |post| %>
+    <% post.id %>
     <%= link_to (post.title), post_path(post.id) %>
 
     <br>
-
-    <%= link_to 'Delete Post', { action: :destroy, id: post.id },
-    method: :delete %>
-
-    <%= link_to 'Update Post', edit_post_path(user_id: @user.id) %>
+    <hr>
   <% end %>
 </h2>

@@ -1,26 +1,36 @@
-<h1>All Posts</h1>
-
-<h2>
+<h1>
   <%= link_to ("Create A New Post To Share"), new_post_path %>
-</h2>
+</h1>
 
 <br>
 
-<h2>
-  <%= @posts.each do |post| %>
+<h1><u>All Posts</u></h1>
 
-    <p>Post Title:</p>
-    <%= post.id %>
+<div>
+  <% @posts.each do |post| %>
+
+    <p>Title:</p>
+    <% post.id %>
     <%= post.title %>
 
-    <p>Post:</p>
+    <p>Content:</p>
     <%= post.content %>
 
-    <br>
+    <p>Created At:</p>
+    <%= post.created_at %>
 
-    <%= link_to ("User's Profile"), post_path(post.id) %> |
+    <br><br>
+
+    <%= link_to ("User's Profile"), post_path(post.id) %>
+    <br>
+    <%= link_to ("User's Profile"), user_path(post.id) %>
+
+    <br>
+    <%= link_to 'Edit Post', { action: :edit, id: post.id }, method: :edit %>
     <br>
     <%= link_to 'Delete Post', { action: :destroy, id: post.id }, method: :delete %>
 
+    <br>
+    <hr>
   <% end %>
-</h2>
+</div>

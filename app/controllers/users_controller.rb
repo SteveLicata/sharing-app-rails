@@ -10,6 +10,7 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
      @users = User.all
      @user_posts = @user.posts
+     @post = Post.find(params[:id])
   end
 
 end
