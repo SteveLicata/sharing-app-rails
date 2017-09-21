@@ -6,7 +6,6 @@
   <%= @post.user.user_name %>'s Post
 </h1>
 
-
 <p>
     <% @post.id %>
     <%= @post.title %>
@@ -24,7 +23,7 @@
     Posted By: <%= @post.user.first_name %> <%= @post.user.last_name %>
 
     <br>
-    
+
     <%= link_to 'Delete Post', { action: :destroy, id: @post.id },
     method: :delete %>
 
