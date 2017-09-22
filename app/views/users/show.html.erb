@@ -13,29 +13,29 @@
 <div>
   <!-- <%= @user.inspect %> -->
   <h4>
-    User Name: <%= @user.user_name %>
+    <%= @user.user_name %>
   </h4>
   <h4>
-    Name: <%= @user.first_name %> <%= @user.last_name %>
+    <%= @user.first_name %> <%= @user.last_name %>
   </h4>
   <h4>
-    Email: <%= @user.email %>
+    <%= @user.email %>
   </h4>
   <div>
     <%= image_tag @user.avatar.url %>
   </div>
 </div>
 
-<h1>
+<h4>
   <%= link_to "Edit Profile", edit_user_registration_path %>
-</h1>
+</h4>
 
 
-<h2>
-  <%= @user.user_name %>'s Posts
-</h2>
+<h4>
+  <%= @user.user_name %>'s Posts:
+</h4>
 
-<h2>
+<h4>
   <% @user_posts.each do |post| %>
     <% post.id %>
     <%= link_to (post.title), post_path(post.id) %>
@@ -43,4 +43,4 @@
     <br>
     <hr>
   <% end %>
-</h2>
+</h4>
