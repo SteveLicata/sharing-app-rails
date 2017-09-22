@@ -1,13 +1,10 @@
 <h1>All Users</h1>
 
-<h2>
+<h4>
   <% @users.each do |user| %>
 
-    <%= user.id %>.
-    <%= user.first_name %>
-    <%= user.last_name %>
-    <%= user.user_name %>
-    <%= user.email %>
+    <!-- <%= user.id %>. -->
+    <%= link_to  user.user_name, user_path(user.id) %>
 
     <br>
 
@@ -15,11 +12,22 @@
 
     <br>
 
-    <%= link_to ("User's Profile page"), user_path(user.id) %>
+    <%= user.first_name %> <%= user.last_name %>
 
-    <%= link_to 'Delete user',  { action: :destroy, id: user.id }, method: :delete %>
+    <br>
+
+    <a href="mailto:<%= user.email %>"><%= user.email %></a>
+
+    <br>
+
+    <!-- <%= link_to ("User's Profile page"), user_path(user.id) %> -->
+
+    <!-- <br> -->
+
+    <!-- <%= link_to 'Delete user',  { action: :destroy, id: user.id }, method: :delete %> -->
+
     <hr>
 
   <% end %>
 
-</h2>
+</h4>

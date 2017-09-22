@@ -1,8 +1,9 @@
 <h1>All Users</h1>
 
 <% @users.each do |users| %>
-  <%= users.user_name %>
-  <%= link_to ("Profile"), user_path(users.id) %>
+
+  <%= link_to  users.user_name, user_path(users.id) %>
+
   <br>
 <% end %>
 
@@ -11,18 +12,15 @@
 
 <div>
   <!-- <%= @user.inspect %> -->
-  <p>
-    User Name:<%= @user.user_name %>
-  </p>
-  <p>
-    First Name:<%= @user.first_name %>
-  </p>
-  <p>
-    Last Name:<%= @user.last_name %>
-  </p>
-  <p>
-    Email:<%= @user.email %>
-  </p>
+  <h4>
+    User Name: <%= @user.user_name %>
+  </h4>
+  <h4>
+    Name: <%= @user.first_name %> <%= @user.last_name %>
+  </h4>
+  <h4>
+    Email: <%= @user.email %>
+  </h4>
   <div>
     <%= image_tag @user.avatar.url %>
   </div>
