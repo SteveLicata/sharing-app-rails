@@ -16,6 +16,7 @@
         <%= link_to "Share", new_post_path %>
         <%= link_to "Users", users_path %>
         <%= link_to "Post Feed", posts_path %>
+        <%= link_to "Inbox", shared_posts_path %>
         <%= link_to "Profile", user_path(current_user.id) %>
         <%= link_to 'Sign Out', { :action => 'destroy', :controller => 'devise/sessions' },	method: :delete %>
     	<% else %>

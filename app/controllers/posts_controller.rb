@@ -51,6 +51,11 @@ class PostsController < ApplicationController
       redirect_to url_for(:controller => :posts, :action => :index)
   end
 
+  def shared_posts
+    Post.find(params[:post_id]).user <<
+    User.find(params[:user_id])
+  end
+
   private
   def post_params
     params.require(:post).permit(:user_id, :title, :content, :created_at)

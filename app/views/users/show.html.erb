@@ -1,13 +1,12 @@
 <h1>All Users</h1>
 
-<% @users.each do |users| %>
+<h4>
+  <% @users.each do |users| %>
+    <%= link_to  users.user_name, user_path(users.id) %>
+      <br>
+  <% end %>
+</h4>
 
-  <%= link_to  users.user_name, user_path(users.id) %>
-
-  <br>
-<% end %>
-
-<br>
 <hr>
 
 <div>
@@ -32,7 +31,7 @@
 
 
 <h4>
-  <%= @user.user_name %>'s Posts:
+  My (<%= @user.user_name %>) Posts:
 </h4>
 
 <h4>

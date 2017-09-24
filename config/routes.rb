@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   #user route
   get "/users/:id" => "users#show", as: "user"
 
+  #view posts shared by other user route
+  get "/posts/shared_posts" => "posts#shared_posts", as: "shared_posts"
+
   #user routes
   resources :users
 
