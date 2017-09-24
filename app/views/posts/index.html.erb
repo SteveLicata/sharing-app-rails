@@ -1,24 +1,27 @@
 <h1>
-  <%= link_to ("Create A New Post To Share"), new_post_path %>
+  <%= link_to ("Share Something!"), new_post_path %>
 </h1>
 
-<h1><u>All Posts</u></h1>
+<h1><u>Post Feed</u></h1>
 
 <h4>
   <% @posts.each do |post| %>
 
-    <p>Title:</p>
-    <% post.id %>
-    <%= post.title %>
+    <p>
+      Title:
+      <% post.id %>
+      <%= post.title %>
+    </p>
 
-    <p>Content:</p>
-    <%= post.content %>
+    <p>
+      Content:
+      <%= post.content %>
+    </p>
 
-    <p>Created At:</p>
-    <%= post.created_at %>
-
-    <br>
-    <br>
+    <p>
+      Created At:
+      <%= post.created_at %>
+    </p>
 
     <%= link_to ("View Post"), post_path(post.id) %>
     <br>
