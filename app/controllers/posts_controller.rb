@@ -52,8 +52,8 @@ class PostsController < ApplicationController
   end
 
   def shared_posts
-    Post.find(params[:post_id]).user <<
-    User.find(params[:user_id])
+    # Post.find(params[:post_id]).user <<
+    # User.find(params[:user_id])
   end
 
   private
