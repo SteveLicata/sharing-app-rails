@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   #view posts shared by other user route
   get "/posts/shared_posts" => "posts#shared_posts", as: "shared_posts"
 
+  get	"/posts/:id/edit(.:format)" =>	"posts#edit", as: "edit_posts_path"
+
   #user routes
   resources :users
 

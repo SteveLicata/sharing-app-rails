@@ -27,7 +27,7 @@
     <br>
     <%= link_to ("User's Profile"), user_path(post.id) %>
     <br>
-    <%= link_to 'Edit Post', { action: :edit, id: post.id }, method: :edit %>
+    <%= link_to ("Edit Post"), edit_post_path(post.id) %>
     <br>
     <%= link_to 'Delete Post', { action: :destroy, id: post.id }, method: :delete %>
     <br>
