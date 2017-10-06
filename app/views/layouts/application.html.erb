@@ -9,7 +9,7 @@
   </head>
 
   <body>
-
+    <center>
     <nav>
       <% if (user_signed_in?) %>
         <%= link_to "Home", home_page_path %>
@@ -25,7 +25,7 @@
     		<%= link_to 'Sign Up', new_user_registration_path %>
       <% end %>
     </nav>
-
+    </center>
     <%= yield %>
 
     <p class="notice"><%= notice %></p>

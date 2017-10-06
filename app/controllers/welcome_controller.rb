@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def home
-	   @message = "Welcome to The Sharing App."
+	   @message = "The Sharing App"
   end
 
 end
