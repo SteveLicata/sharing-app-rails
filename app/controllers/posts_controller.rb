@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       user_id: params[:post][:user_id].to_i,
       title: params[:post][:title],
       content: params[:post][:content],
-      created_at: params[:post][:created_at]
+      created_at: params[:post][:created_at],
     )
     @new_post.save
 
