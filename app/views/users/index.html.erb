@@ -1,33 +1,33 @@
-<h1>All Users</h1>
+<div class="container">
 
-<h4>
-  <% @users.each do |user| %>
+  <div class="row userindex">
+    <div class="col-sm">
+      <h1>
+        All Users
+      </h1>
+    </div>
+  </div>
 
-    <% user.id %>
-    <%= link_to  user.user_name, user_path(user.id) %>
+  <div class="row userindex">
+    <div class="col-sm">
+      <h4>
+        <% @users.each do |user| %>
+          <% user.id %>
+          <%= link_to  user.user_name, user_path(user.id) %>
+          <br>
+          <%= image_tag user.avatar.url %>
+          <br>
+          <%= user.first_name %> <%= user.last_name %>
+          <br>
+          <a href="mailto:<%= user.email %>"><%= user.email %></a>
+          <br>
+          <!-- <%= link_to ("User's Profile page"), user_path(user.id) %> -->
+          <!-- <br> -->
+          <!-- <%= link_to 'Delete user',  { action: :destroy, id: user.id }, method: :delete %> -->
+          <hr>
+        <% end %>
+      </h4>
+    </div>
+  </div>
 
-    <br>
-
-    <%= image_tag user.avatar.url %>
-
-    <br>
-
-    <%= user.first_name %> <%= user.last_name %>
-
-    <br>
-
-    <a href="mailto:<%= user.email %>"><%= user.email %></a>
-
-    <br>
-
-    <!-- <%= link_to ("User's Profile page"), user_path(user.id) %> -->
-
-    <!-- <br> -->
-
-    <!-- <%= link_to 'Delete user',  { action: :destroy, id: user.id }, method: :delete %> -->
-
-    <hr>
-
-  <% end %>
-
-</h4>
+</div>

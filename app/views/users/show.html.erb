@@ -1,49 +1,66 @@
-<h1>All Users</h1>
+<div class="container">
 
-<h4>
-  <% @users.each do |users| %>
-    <%= link_to  users.user_name, user_path(users.id) %>
-      <br>
-  <% end %>
-</h4>
-
-<hr>
-
-<h1>
-  My Profile
-</h1>
-
-<div>
-  <!-- <%= @user.inspect %> -->
-  <h4>
-    <%= @user.user_name %>
-  </h4>
-  <h4>
-    <%= @user.first_name %> <%= @user.last_name %>
-  </h4>
-  <h4>
-    <%= @user.email %>
-  </h4>
-  <div>
-    <%= image_tag @user.avatar.url %>
+  <div class="row usershow">
+    <div class="col-sm">
+      <h1>
+        All Users
+      </h1>
+      <h4>
+        <% @users.each do |users| %>
+        <%= link_to  users.user_name, user_path(users.id) %>
+        <br>
+        <% end %>
+      </h4>
+      <hr>
+    </div>
   </div>
+
+  <div class="row usershow">
+    <div class="col-sm">
+      <h1>
+        My Profile
+      </h1>
+    </div>
+  </div>
+
+  <div class="row usershow">
+    <div class="col-sm">
+      <div>
+        <!-- <%= @user.inspect %> -->
+        <h4>
+          <%= @user.user_name %>
+        </h4>
+        <h4>
+          <%= @user.first_name %> <%= @user.last_name %>
+        </h4>
+        <h4>
+          <%= @user.email %>
+        </h4>
+        <div>
+          <%= image_tag @user.avatar.url %>
+        </div>
+      </div>
+      <h4>
+        <%= link_to "Edit Profile", edit_user_registration_path %>
+      </h4>
+      <br><br>
+    </div>
+  </div>
+
+  <div class="row usershow">
+    <div class="col-sm">
+      <h4>
+        My (<%= @user.user_name %>) Posts:
+      </h4>
+      <h4>
+        <% @user_posts.each do |post| %>
+        <% post.id %>
+        <%= link_to (post.title), post_path(post.id) %>
+        <br>
+        <hr>
+        <% end %>
+      </h4>
+    </div>
+  </div>
+
 </div>
-
-<h4>
-  <%= link_to "Edit Profile", edit_user_registration_path %>
-</h4>
-
-
-<h4>
-  My (<%= @user.user_name %>) Posts:
-</h4>
-
-<h4>
-  <% @user_posts.each do |post| %>
-    <% post.id %>
-    <%= link_to (post.title), post_path(post.id) %>
-
-    <br>
-    <hr>
-  <% end %>
-</h4>
