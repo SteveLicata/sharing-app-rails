@@ -1,36 +1,51 @@
-<h1>
-  <%= link_to ("Share Something!"), new_post_path %>
-</h1>
+<div class="container">
 
-<h1><u>Post Feed</u></h1>
+  <div class="row postindex">
+    <div class="col-sm">
+      <h1>
+        <%= link_to ("Share Something!"), new_post_path %>
+      </h1>
+      <br>
+    </div>
+  </div>
 
-<h4>
-  <% @posts.each do |post| %>
+  <div class="row postindex">
+    <div class="col-sm">
+      <h1>
+        <u>Post Feed</u>
+      </h1>
+    </div>
+  </div>
 
-    <p>
-      Title:
-      <% post.id %>
-      <%= post.title %>
-    </p>
+  <div class="row postindex">
+    <div class="col-sm">
+      <h4>
+        <% @posts.each do |post| %>
+        <p>
+          Title:
+          <% post.id %>
+          <%= post.title %>
+        </p>
+        <p>
+          Content:
+          <%= post.content %>
+        </p>
+        <p>
+          Created At:
+          <%= post.created_at %>
+        </p>
+        <%= link_to ("View Post"), post_path(post.id) %>
+        <br>
+        <%= link_to ("User's Profile"), user_path(post.id) %>
+        <br>
+        <%= link_to ("Edit Post"), edit_post_path(post.id) %>
+        <br>
+        <%= link_to 'Delete Post', { action: :destroy, id: post.id }, method: :delete %>
+        <br>
+        <hr>
+        <% end %>
+      </h4>
+    </div>
+  </div>
 
-    <p>
-      Content:
-      <%= post.content %>
-    </p>
-
-    <p>
-      Created At:
-      <%= post.created_at %>
-    </p>
-
-    <%= link_to ("View Post"), post_path(post.id) %>
-    <br>
-    <%= link_to ("User's Profile"), user_path(post.id) %>
-    <br>
-    <%= link_to ("Edit Post"), edit_post_path(post.id) %>
-    <br>
-    <%= link_to 'Delete Post', { action: :destroy, id: post.id }, method: :delete %>
-    <br>
-    <hr>
-  <% end %>
-</h4>
+</div>

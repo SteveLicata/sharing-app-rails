@@ -1,44 +1,56 @@
-<h2>
-  <%= link_to ("Create A New Post To Share"), new_post_path %>
-</h2>
+<div class="container">
 
-<h1>
-  <%= @post.user.user_name %>'s Post
-</h1>
+  <div class="row postshow">
+    <div class="col-sm">
+      <h2>
+        <%= link_to ("Create A New Post To Share"), new_post_path %>
+      </h2>
+      <br>
+    </div>
+  </div>
 
-<div>
-    <% @post.id %>
+  <div class="row postshow">
+    <div class="col-sm">
+      <h1>
+        <%= @post.user.user_name %>'s Post
+      </h1>
+    </div>
+  </div>
 
-    <h3>
-      Title:
-    </h3>
-    <p>
-      <%= @post.title %>
-    </p>
-    <h3>
-      Content:
-    </h3>
-    <p>
-      <%= @post.content %>
-    </p>
-    <h3>
-      Created at:
-    </h3>
-    <p>
-      <%= @post.created_at %>
-    </p>
-    <h3>
-      Posted By:
-    </h3>
-    <p>
-      <%= @post.user.first_name %> <%= @post.user.last_name %>
-    </p>
-
-    <hr>
-    
-    <%= link_to 'Delete Post', { action: :destroy, id: @post.id },
-    method: :delete %>
-
-    <%= link_to 'Edit Post', edit_post_path(user_id: @post.id) %>
+  <div class="row postshow">
+    <div class="col-sm">
+      <div>
+        <% @post.id %>
+        <h3>
+          Title:
+        </h3>
+        <p>
+          <%= @post.title %>
+        </p>
+        <h3>
+          Content:
+        </h3>
+        <p>
+          <%= @post.content %>
+        </p>
+        <h3>
+          Created at:
+        </h3>
+        <p>
+          <%= @post.created_at %>
+        </p>
+        <h3>
+          Posted By:
+        </h3>
+        <p>
+          <%= @post.user.first_name %> <%= @post.user.last_name %>
+        </p>
+        <hr>
+        <%= link_to 'Delete Post', { action: :destroy, id: @post.id },
+        method: :delete %> | 
+        <%= link_to 'Edit Post', edit_post_path(user_id: @post.id) %>
+      </div>
+    </div>
+  </div>
 
 </div>
