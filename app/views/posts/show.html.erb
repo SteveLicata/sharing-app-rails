@@ -3,7 +3,7 @@
   <div class="row postshow">
     <div class="col-sm">
       <h2>
-        <%= link_to ("Create A New Post To Share"), new_post_path %>
+        <%= link_to ("Share Something!"), new_post_path %>
       </h2>
       <br>
     </div>
@@ -47,7 +47,7 @@
         </p>
         <hr>
         <%= link_to 'Delete Post', { action: :destroy, id: @post.id },
-        method: :delete %> | 
+        method: :delete %> |
         <%= link_to 'Edit Post', edit_post_path(user_id: @post.id) %>
       </div>
     </div>

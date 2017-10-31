@@ -41,7 +41,10 @@
         </div>
       </div>
       <h4>
-        <%= link_to "Edit Profile", edit_user_registration_path %>
+        <% if (user_signed_in?) %>
+          <%= link_to "Edit Profile", edit_user_registration_path(user_id: @user.id) %>
+        <% else %>
+        <% end %>
       </h4>
       <br><br>
     </div>
