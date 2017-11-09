@@ -19,4 +19,12 @@ Rails.application.routes.draw do
   #post routes
   resources :posts
 
+  resources :conversations, only: [:index, :show, :new, :create] do
+   member do
+     post :reply
+     post :trash
+     post :untrash
+   end
+ end
+
 end

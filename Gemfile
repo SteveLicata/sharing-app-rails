@@ -9,6 +9,7 @@ gem 'pry-rails'
 gem 'awesome_print'
 gem 'devise'
 gem 'paperclip'
+gem 'mailboxer'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'

@@ -3,6 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  # acts_as_messageable
+
+  def name
+    return "You should add method :name in your Messageable model"
+  end
+
+  def mailboxer_email(object)
+    #Check if an email should be sent for that object
+    #if true
+    return "define_email@on_your.model"
+    #if false
+    #return nil
+  end
 
   #paperclip
   has_attached_file :avatar,
@@ -14,5 +27,6 @@ class User < ApplicationRecord
 
   #associations
   has_many :posts
-  
+
+
 end
